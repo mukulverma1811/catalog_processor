@@ -58,3 +58,8 @@ class CatalogIndexer():
 
     def run_missing_attribute(self):
         self.catalog = self.compute_missing_attribute.compute(self.catalog, self.domain_config)
+
+
+if __name__ == "__main__":
+    ci = CatalogIndexer('jiomart_autosuggest_v2')
+    ci.index_catalog()

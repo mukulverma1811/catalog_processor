@@ -39,7 +39,7 @@ from sklearn.compose import ColumnTransformer
 #     def transform(self, x_dataset):
 #         x_dataset['cleaned_text'] = x_dataset[self.text_column].apply(lambda x: self.text_preprocessing_model.clean_text(x))
 #         return x_dataset
-import sister
+# import sister
 
 class SentenceEmbedding():
 
