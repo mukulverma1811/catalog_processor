@@ -1,0 +1,8 @@
+swifter==1.0.7
+xgboost==1.4.2
+spacy==2.3.2
+pandas==1.1.4
+nltk==3.5
+inflect==4.1.0
+scikit_learn==0.24.2
+sister==0.2.2
