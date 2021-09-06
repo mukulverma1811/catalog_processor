@@ -1,6 +1,6 @@
 from load_config import config
 
-import swifter
+# import swifter
 import pandas as pd
 from text_processing import TextProcessing
 from compute_missing_attributes import ComputeMissingAttributes
@@ -47,8 +47,10 @@ class CatalogIndexer():
 
     def run_text_processor(self):
         for column in self.domain_config['columns_for_text_processor']:
-            self.catalog[f'{column}'] = self.catalog[column].swifter.apply(lambda x: self.text_processor.clean_text(x))
-        self.catalog['input_text'] = self.catalog[self.domain_config['input_text_column']].swifter.apply(lambda x: self.text_processor.clean_text(x))
+            self.catalog[f'{column}'] = self.catalog[column].apply(lambda x: self.text_processor.clean_text(x))
+            # self.catalog[f'{column}'] = self.catalog[column].swifter.apply(lambda x: self.text_processor.clean_text(x))
+        self.catalog['input_text'] = self.catalog[self.domain_config['input_text_column']].apply(lambda x: self.text_processor.clean_text(x))
+        # self.catalog['input_text'] = self.catalog[self.domain_config['input_text_column']].swifter.apply(lambda x: self.text_processor.clean_text(x))
         
 
     def run_ampersand_category(self):

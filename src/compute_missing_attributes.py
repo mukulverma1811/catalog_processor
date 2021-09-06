@@ -19,7 +19,8 @@ class ComputeMissingAttributes():
             model.evaluate_pipeline()
 
             print(f'predicting and saving missing attributes')
-            catalog[column] = catalog.swifter.apply(lambda row : self.get_missing_attribute(model, row['input_text'], row[column]), axis = 1)
+            catalog[column] = catalog.apply(lambda row : self.get_missing_attribute(model, row['input_text'], row[column]), axis = 1)
+            # catalog[column] = catalog.swifter.apply(lambda row : self.get_missing_attribute(model, row['input_text'], row[column]), axis = 1)
         
         return catalog
 
