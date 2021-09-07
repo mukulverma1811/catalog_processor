@@ -48,10 +48,14 @@ class TextProcessing:
     
     @lru_cache(maxsize=100000)
     def clean_text(self, text):
+        text = str(text)
+        if text == 'nan':
+            return text
         return self.clean_texts([text])[0]
 
     def clean_texts(self, texts):
         processed_texts = list()
+        texts = [str(text) for text in texts]
         docs = list(self.spacy_nlp.pipe(texts))
         for doc in docs:
             

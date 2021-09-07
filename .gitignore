@@ -1,0 +1,5 @@
+src/*.ipynb
+/**/*.DS_Store
+/**/*.pyc
+/data/*
+/src/models/*
